@@ -6,17 +6,18 @@
 #    By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/24 12:24:27 by dmusulas          #+#    #+#              #
-#    Updated: 2025/07/15 17:52:27 by dmusulas         ###   ########.fr        #
+#    Updated: 2025/07/17 13:57:17 by dmusulas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CPP             = c++
 CPPFLAGS        = -Wall -Wextra -Werror -std=c++98
-NAME            = converter 
+NAME            = convert
 MAKE            = make
 RM              = rm -rf
 
-SRCS            = main.cpp ScalarConverter.cpp ScalarConverter.hpp
+SRCS            = main.cpp ScalarConverter.cpp \
+				  TypeConverter.cpp TypeDetector.cpp
 
 OBJS            = $(SRCS:%.cpp=obj/%.o)
 OBJ_DIR         = obj
