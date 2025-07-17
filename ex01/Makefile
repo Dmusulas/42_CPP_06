@@ -6,18 +6,17 @@
 #    By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/24 12:24:27 by dmusulas          #+#    #+#              #
-#    Updated: 2025/07/17 15:31:19 by dmusulas         ###   ########.fr        #
+#    Updated: 2025/07/17 15:49:39 by dmusulas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CPP             = c++
 CPPFLAGS        = -Wall -Wextra -Werror -std=c++98 -MMD -MP
-NAME            = convert
+NAME            = serialize
 MAKE            = make
 RM              = rm -rf
 
-SRCS            = main.cpp ScalarConverter.cpp \
-				  TypeConverter.cpp TypeDetector.cpp
+SRCS            = main.cpp Serializer.cpp
 
 OBJS            = $(SRCS:%.cpp=obj/%.o)
 OBJ_DIR         = obj

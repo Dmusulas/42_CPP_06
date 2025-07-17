@@ -6,17 +6,17 @@
 #    By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/24 12:24:27 by dmusulas          #+#    #+#              #
-#    Updated: 2025/07/08 18:12:40 by dmusulas         ###   ########.fr        #
+#    Updated: 2025/07/17 16:20:30 by dmusulas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CPP             = c++
-CPPFLAGS        = -Wall -Wextra -Werror -std=c++98 -O0
-NAME            = bureaucrat 
+CPPFLAGS        = -Wall -Wextra -Werror -std=c++98 -MMD -MP
+NAME            = real_type
 MAKE            = make
 RM              = rm -rf
 
-SRCS            = main.cpp Bureaucrat.cpp
+SRCS            = main.cpp Base.cpp
 
 OBJS            = $(SRCS:%.cpp=obj/%.o)
 OBJ_DIR         = obj
