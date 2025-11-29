@@ -6,7 +6,7 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 13:48:22 by dmusulas          #+#    #+#             */
-/*   Updated: 2025/07/17 15:24:43 by dmusulas         ###   ########.fr       */
+/*   Updated: 2025/11/29 15:26:57 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void TypeConverter::convertFromInt(int value) {
 
 void TypeConverter::convertFromFloat(float value) {
     // float -> char
-    if (value < 0 || value > 127 || value != static_cast<int>(value)) {
+    if (value < 0 || value > 127) {
         std::cout << "char: impossible" << std::endl;
     } else {
         char c = static_cast<char>(value);
@@ -144,16 +144,6 @@ void TypeConverter::convertFromSpecialDouble(const std::string &literal) {
 void TypeConverter::convertAndDisplay(const std::string &literal,
                                       LiteralType type) {
     switch (type) {
-    case CHAR_TYPE: {
-        if (literal.length() == 3) {
-
-            char c = literal[1];
-            convertFromChar(c);
-        } else {
-            convertFromChar(literal[0]);
-        }
-        break;
-    }
     case INT_TYPE: {
         int value = std::atoi(literal.c_str());
         convertFromInt(value);
@@ -175,6 +165,16 @@ void TypeConverter::convertAndDisplay(const std::string &literal,
         } else {
             double value = std::atof(literal.c_str());
             convertFromDouble(value);
+        }
+        break;
+    }
+    case CHAR_TYPE: {
+        if (literal.length() == 3) {
+
+            char c = literal[1];
+            convertFromChar(c);
+        } else {
+            convertFromChar(literal[0]);
         }
         break;
     }

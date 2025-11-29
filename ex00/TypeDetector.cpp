@@ -6,19 +6,23 @@
 /*   By: dmusulas <dmusulas@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 13:42:51 by dmusulas          #+#    #+#             */
-/*   Updated: 2025/07/17 15:09:11 by dmusulas         ###   ########.fr       */
+/*   Updated: 2025/11/29 15:24:08 by dmusulas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "TypeDetector.hpp"
 #include <iostream>
 #include <sstream>
+
 bool TypeDetector::isChar(const std::string &literal) {
+    // Check for explicit char syntax like 'a'
     if (literal.length() == 3 && literal[0] == '\'' && literal[2] == '\'' &&
         literal[1] >= 32 && literal[1] <= 126)
         return true;
+
     else if (literal.length() == 1 && literal[0] >= 32 && literal[0] <= 126) {
-        // Handle single character literals
+        if (literal[0] >= '0' && literal[0] <= '9')
+            return false;
         return true;
     }
     return false;
